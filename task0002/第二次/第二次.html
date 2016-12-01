@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小新和巴卫耶</title>
+    <style>
+        .img-box img{
+            position:absolute;
+            width:100%;
+            height:100%;
+        }
+        .btn-box button{
+            position:absolute;
+            background:url("images/GR.png");
+            border:10;
+            width:200px;
+            height: 50px;
+            left: 700px;
+            font-size: 20px;
+            border-radius:8px;
+            outline: none;
+            padding-right:20px;
+        }
+    </style>
+</head>
+<body>
+<div class="img-box">
+    <img class="XX" src="images/XX.png">
+    <img class="BW" src="images/BW.jpg">
+</div>
+<div class="btn-box" style="padding-top:280px;padding-left:1000px">
+    <button id="BW">巴卫</button>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <button id="XX">小新</button>
+</div>
+<script>
+    var btns=document.getElementsByTagName("button");
+    var imgs=document.getElementsByTagName("img");
+
+    for(var i=0;i<btns.length;i++){
+        btns[i].onclick=function(){
+            var id=this.id;
+            XXBWimgs(id);
+            XXBWbtns(id)
+        }
+    }
+
+    function XXBWimgs(id){
+        for(var i=0;i<imgs.length;i++){
+            if(imgs[i].className==id){
+                imgs[i].style.zIndex=0;
+            }
+            else {
+                imgs[i].style.zIndex=-1;
+            }
+        }
+    }
+
+    function XXBWbtns(id){
+        for(var i=0;i<btns.length;i++){
+            if(btns[i].id==id){
+                btns[i].style.color="black";
+                btns[i].style.backgroundImage="url(images/GR.png）";
+            }
+            else{
+                btns[i].style.backgroundImage="url(images/BL.png)";
+                btns[i].style.color="powderblue";
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
